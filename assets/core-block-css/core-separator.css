@@ -1,0 +1,38 @@
+/* core/separator
+---------------------------------------------------------------------------- */
+
+.wp-block-separator.wp-block-separator.wp-block-separator.wp-block-separator {
+  background-color: transparent;
+}
+
+.wp-block-separator.wp-block-separator.wp-block-separator.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+  width: clamp(100px, 15vw, 200px);
+}
+
+.wp-block-separator.wp-block-separator.wp-block-separator.wp-block-separator.wp-block-separator.is-style-wide-dotted,
+.wp-block-separator.wp-block-separator.wp-block-separator.wp-block-separator.wp-block-separator.is-style-wide-dashed,
+.wp-block-separator.wp-block-separator.wp-block-separator.wp-block-separator.wp-block-separator.is-style-wide-double {
+  width: 100%;
+}
+
+.wp-block-separator.is-style-wide {
+  border-bottom-width: 1px;
+}
+
+.wp-block-separator.is-style-wide-dotted {
+  border-bottom-style: dotted;
+}
+
+.wp-block-separator.is-style-wide-dashed {
+  border-bottom-width: 1px;
+  border-bottom-style: dashed;
+}
+
+.wp-block-separator.is-style-wide-double {
+  border-bottom-width: 4px;
+  border-bottom-style: double;
+}
+
+.wp-block-separator.is-style-hidden {
+  border-bottom-style: hidden;
+}
