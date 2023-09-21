@@ -1,0 +1,19 @@
+/* core/query-pagination-numbers
+---------------------------------------------------------------------------- */
+
+.wp-block-query-pagination > .wp-block-query-pagination-next,
+.wp-block-query-pagination > .wp-block-query-pagination-numbers,
+.wp-block-query-pagination > .wp-block-query-pagination-previous {
+  margin-bottom: 0;
+}
+
+.wp-block-query-pagination .page-numbers {
+  padding: 0.5em 1em;
+  border: 1px solid currentcolor;
+  border-radius: 3px;
+}
+
+.wp-block-query-pagination .page-numbers:not(:first-child):not(:last-child) {
+  margin-left: 1em;
+  margin-right: 1em;
+}

@@ -1,0 +1,188 @@
+/* Utility classes
+---------------------------------------------------------------------------- */
+
+/* Removes underline from link when it's not hovered over. */
+
+a:not(:hover):not(:active).no-link-underline,
+.no-link-underline a:not(:hover):not(:active) {
+  text-decoration: none !important;
+}
+
+/* Removes underline from link when it's hovered over. */
+
+a:hover.no-hover-underline,
+a:active.no-hover-underline,
+.no-hover-underline a:hover,
+.no-hover-underline a:active {
+  text-decoration: none !important;
+}
+
+/* Gives the same color to link as surrounding text when it's not hovered over */
+
+a:not(:hover):not(:active).no-link-color,
+.no-link-color a:not(:hover):not(:active) {
+  color: currentcolor !important;
+}
+
+/* Gives the same color to link as surrounding text when it's hovered over */
+
+.no-hover-color:hover,
+.no-hover-color:active,
+.no-hover-color a:hover,
+.no-hover-color a:active {
+  color: currentcolor !important;
+}
+
+/* Gives the same color as surrounding text */
+
+.currentcolor {
+  color: currentColor !important;
+}
+
+/* Gives descendants the same color as current color */
+
+.currentcolor-descendant :not(svg) {
+  color: currentColor !important;
+}
+
+/* Gives svg the same color as current color */
+
+.currentcolor-descendant svg {
+  fill: currentColor !important;
+}
+
+/* Prevents a child of flexbox to shrink */
+
+.dont-shrink {
+  flex-shrink: 0 !important;
+}
+
+/* Sets width to the global content size */
+
+.has-content-width {
+  width: var(--wp--style--global--content-size) !important;
+}
+
+/* Changes the meaning of width to mean the width of only the content */
+
+.has-content-box {
+  box-sizing: content-box !important;
+}
+
+/* Sticky header
+---------------------------------------------------------------------------- */
+
+header.sticky {
+  position: sticky;
+}
+
+header.fixed {
+  position: fixed;
+  width: 100%;
+}
+
+header.sticky,
+header.fixed {
+  top: var(--wp-admin--admin-bar--height, 0);
+  z-index: 9999;
+}
+
+/* Sticky footer
+---------------------------------------------------------------------------- */
+
+.wp-site-blocks {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--wp-admin--admin-bar--height, 0));
+}
+
+.wp-site-blocks > main {
+  flex-grow: 1;
+}
+
+/* Shadow
+---------------------------------------------------------------------------- */
+
+/* Makes it easier to override box shadow style */
+
+:root {
+  --box-shadow: 0 0 15px rgba(0, 0, 0, 30%);
+}
+
+/* Adds box shadow */
+
+.has-shadow {
+  box-shadow: var(--box-shadow);
+}
+
+/* No shadow for sticky headers before scrolling */
+
+body:not(.has-scrolled) header.sticky.has-shadow,
+body:not(.has-scrolled) header.fixed.has-shadow {
+  box-shadow: none;
+}
+
+/* Smooth adding and removing of shadow for sticky headers */
+
+header.sticky,
+header.fixed {
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+/* Core navigation block has shadow for submenu and mobile menu panels */
+
+nav.wp-block-navigation.has-shadow ul,
+nav.wp-block-navigation.has-shadow .has-modal-open {
+  box-shadow: var(--box-shadow);
+}
+
+nav.wp-block-navigation.has-shadow,
+nav.wp-block-navigation.has-shadow > .wp-block-navigation,
+nav.wp-block-navigation.has-shadow .has-modal-open ul {
+  box-shadow: none;
+}
+
+/* Post meta icons
+---------------------------------------------------------------------------- */
+
+.has-post-author-icon,
+.has-post-date-icon,
+.has-post-category-icon,
+.has-post-tag-icon {
+  display: flex;
+}
+
+:is(.has-post-author-icon, .has-post-date-icon, .has-post-category-icon, .has-post-tag-icon):before {
+  content: "";
+  display: inline-block;
+  align-self: center;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  margin-right: 0.4em;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+
+.has-post-author-icon:before {
+  mask-image: url(svg/post-author.svg);
+}
+
+.has-post-date-icon:before {
+  mask-image: url(svg/post-date.svg);
+}
+
+.has-post-category-icon:before {
+  mask-image: url(svg/post-category.svg);
+}
+
+.has-post-tag-icon:before {
+  mask-image: url(svg/post-tag.svg);
+}
+
+/* Fix some issues with default WordPress styles
+---------------------------------------------------------------------------- */
+
+.wp-site-blocks > * {
+  margin: 0;
+}

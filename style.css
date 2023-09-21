@@ -1,0 +1,18 @@
+/*
+Theme Name:        Kntnt Canvas
+Theme URI:         https://github.com/Kntnt/kntnt-canvas
+Author:            Thomas Barregren
+Author URI:        https://www.kntnt.se/
+Description:       A block theme that is designed to provide a foundation on which custom themes can be created as a child themes.
+Requires at least: 6.0
+Tested up to:      6.3
+Requires PHP:      7.0
+Version:           1.0.0
+License:           GNU General Public License v3 or later
+License URI:       http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain:       kntnt-canvas
+Domain Path:       /languages
+Tags:              one-column, wide-blocks, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, sticky-post, translation-ready, block-styles, blog, portfolio, news
+*/
+
+/* Don't edit this file. Use a child theme instead. */
