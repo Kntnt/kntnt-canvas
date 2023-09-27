@@ -20,6 +20,9 @@ Kntnt Canvas is developed to accomplish three objectives:
 
 == Changelog ==
 
+= 1.0.1 =
+* FIXED: Undefined property: class@anonymous::$child_theme_textdomain.
+
 = 1.0.0 =
 * Initial release
 

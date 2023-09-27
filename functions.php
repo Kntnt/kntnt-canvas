@@ -18,11 +18,13 @@ new class {
 
 	private $theme_script;
 
-	private $child_theme;
+	private $child_theme = null;
 
 	private $child_theme_style = null;
 
 	private $child_theme_script = null;
+
+	private $child_theme_textdomain = null;
 
 	public function __construct() {
 
