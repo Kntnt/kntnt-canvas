@@ -20,6 +20,10 @@ Kntnt Canvas is developed to accomplish three objectives:
 
 == Changelog ==
 
+= 1.0.3 =
+* FIXED: Menu has disappeared
+* FIXED: Theme not using the languages files.
+
 = 1.0.2 =
 * NEW: Added a pattern category for patterns used by the theme.
 * FIXED: Made 404 and index templates translatable.
