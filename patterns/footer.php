@@ -8,7 +8,7 @@
  * Viewport Width: 1280
  * Block Types:
  * Post Types: wp_template, wp_template_part
- * Inserter: true
+ * Inserter: false
  */
 ?>
 <!-- wp:group {"align":"full","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}},"elements":{"link":{"color":{"text":"var:preset|color|white-0"},":hover":{"color":{"text":"var:preset|color|white-0"}}}}},"backgroundColor":"secondary-800","textColor":"white-0","className":"no-link-underline","layout":{"type":"constrained"},"fontSize":"16"} -->
@@ -39,7 +39,7 @@
         <div class="wp-block-group"><!-- wp:paragraph -->
             <p><?php printf(
 				/* translators: %s: Name of the theme */
-		            esc_html( '%s is a block theme that is designed to provide a foundation on which custom themes can be created as a child themes.', 'kntnt-canvas' ),
+		            esc_html__( '%s is a block theme that is designed to provide a foundation on which custom themes can be created as a child themes.', 'kntnt-canvas' ),
 					'Kntnt Canvas'
 				); ?></p>
             <!-- /wp:paragraph --></div>
@@ -55,7 +55,7 @@
         <div class="wp-block-group"><!-- wp:paragraph {"style":{"layout":{"selfStretch":"fit","flexSize":null}}} -->
             <p><a href="https://github.com/Kntnt/kntnt-canvas"><?php printf(
 					/* translators: %s: Name of the theme */
-			            esc_html( 'Theme based on %s', 'kntnt-canvas' ),
+			            esc_html__( 'Theme based on %s', 'kntnt-canvas' ),
 						'Kntnt Canvas'
 					); ?></a></p>
             <!-- /wp:paragraph --></div>
@@ -63,7 +63,7 @@
 
         <!-- wp:group {"style":{"layout":{"selfStretch":"fixed","flexSize":"50%"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
         <div class="wp-block-group"><!-- wp:paragraph {"style":{"layout":{"selfStretch":"fit","flexSize":null}}} -->
-            <p>© <?php echo date( "Y" ); ?> <?php esc_html_e( get_option( 'blogname' ) ); ?></p>
+            <p>© <?php echo date( "Y" ); ?> <?php echo esc_html( get_option( 'blogname' ) ); ?></p>
             <!-- /wp:paragraph --></div>
         <!-- /wp:group --></div>
     <!-- /wp:group --></div>

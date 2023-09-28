@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Kntnt Canvas\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-06 20:47+0000\n"
-"PO-Revision-Date: 2023-09-28 09:21+0000\n"
+"PO-Revision-Date: 2023-09-28 12:23+0000\n"
 "Last-Translator: Thomas Barregren\n"
 "Language-Team: Svenska\n"
 "Language: sv_SE\n"
@@ -14,6 +14,16 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.6.6; wp-6.3.1\n"
 "X-Domain: kntnt-canvas"
+
+#. %s: Name of the theme
+#: patterns/footer.php:42
+#, php-format
+msgid ""
+"%s is a block theme that is designed to provide a foundation on which custom "
+"themes can be created as a child themes."
+msgstr ""
+"%s är ett blocktema som är utformat för att tillhandahålla en grund på "
+"vilken anpassade teman kan skapas som barnteman."
 
 #. Description of the theme
 msgid ""
@@ -35,23 +45,23 @@ msgstr ""
 msgid "Contact Us"
 msgstr "Kontakta oss"
 
-#: functions.php:173
+#: functions.php:164
 msgid "Heading parts"
 msgstr "Rubrikdelar"
 
-#: functions.php:168
+#: functions.php:160
 msgid "Heading sections"
 msgstr "Rubriksektioner"
 
-#: functions.php:163
+#: functions.php:156
 msgid "Hero sections"
 msgstr "Hjältesektioner"
 
-#: functions.php:164
+#: functions.php:157
 msgid "Introductory section at top of page."
 msgstr "Inledande avsnitt överst på sidan."
 
-#: functions.php:169
+#: functions.php:161
 msgid "Introductory section at top of posts."
 msgstr "Inledande avsnitt längst upp i inläggen."
 
@@ -59,11 +69,11 @@ msgstr "Inledande avsnitt längst upp i inläggen."
 msgid "Oops!"
 msgstr "Hoppsan!"
 
-#: functions.php:174
+#: functions.php:165
 msgid "Patterns used to build headings."
 msgstr "Patterns used to build headings."
 
-#: functions.php:179
+#: functions.php:169
 msgid "Patters used by the theme."
 msgstr "Mönster som används av temat."
 
@@ -73,6 +83,12 @@ msgid ""
 msgstr ""
 "Sidan finns inte. Kontrollera adressen, eller försök söka på webbplatsen:"
 
-#: functions.php:178
+#. %s: Name of the theme
+#: patterns/footer.php:58
+#, php-format
+msgid "Theme based on %s"
+msgstr "Tema baserat på %s"
+
+#: functions.php:168
 msgid "Theme patters"
 msgstr "Tema mönster"

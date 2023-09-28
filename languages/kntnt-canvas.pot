@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kntnt Canvas\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-28 09:17+0000\n"
+"POT-Creation-Date: 2023-09-28 12:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -12,9 +12,15 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.6; wp-6.3.1\n"
 "X-Domain: kntnt-canvas"
+
+#. %s: Name of the theme
+#: patterns/footer.php:42
+#, php-format
+msgid ""
+"%s is a block theme that is designed to provide a foundation on which custom "
+"themes can be created as a child themes."
+msgstr ""
 
 #. Description of the theme
 msgid ""
@@ -32,23 +38,23 @@ msgstr ""
 msgid "Contact Us"
 msgstr ""
 
-#: functions.php:173
+#: functions.php:164
 msgid "Heading parts"
 msgstr ""
 
-#: functions.php:168
+#: functions.php:160
 msgid "Heading sections"
 msgstr ""
 
-#: functions.php:163
+#: functions.php:156
 msgid "Hero sections"
 msgstr ""
 
-#: functions.php:164
+#: functions.php:157
 msgid "Introductory section at top of page."
 msgstr ""
 
-#: functions.php:169
+#: functions.php:161
 msgid "Introductory section at top of posts."
 msgstr ""
 
@@ -56,11 +62,11 @@ msgstr ""
 msgid "Oops!"
 msgstr ""
 
-#: functions.php:174
+#: functions.php:165
 msgid "Patterns used to build headings."
 msgstr ""
 
-#: functions.php:179
+#: functions.php:169
 msgid "Patters used by the theme."
 msgstr ""
 
@@ -69,6 +75,12 @@ msgid ""
 "The page does not exist. Check the address, or try searching the website:"
 msgstr ""
 
-#: functions.php:178
+#. %s: Name of the theme
+#: patterns/footer.php:58
+#, php-format
+msgid "Theme based on %s"
+msgstr ""
+
+#: functions.php:168
 msgid "Theme patters"
 msgstr ""

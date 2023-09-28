@@ -18,6 +18,10 @@ new class {
 
 	private $theme_script;
 
+	private $theme_textdomain;
+
+	private $theme_domainpath;
+
 	private $child_theme = null;
 
 	private $child_theme_style = null;
@@ -26,35 +30,17 @@ new class {
 
 	private $child_theme_textdomain = null;
 
+	private $child_theme_domainpath = null;
+
 	public function __construct() {
 
-		$this->ns = sanitize_title( __NAMESPACE__ );
+		$this->ns = strtolower( strtr( __NAMESPACE__, '_', '-' ) );
 
 		$this->theme_dir = get_template_directory();
 		$this->theme_uri = get_template_directory_uri();
 
 		$this->child_theme_dir = get_stylesheet_directory();
 		$this->child_theme_uri = get_stylesheet_directory_uri();
-
-		$this->theme            = wp_get_theme( $this->ns );
-		$this->theme_style      = "$this->theme_uri/assets/theme.css";
-		$this->theme_script     = "$this->theme_uri/assets/theme.min.js";
-		$this->theme_textdomain = $this->theme->get( 'TextDomain' );
-
-		if ( $this->child_theme_dir != $this->theme_dir ) {
-			$this->child_theme = wp_get_theme();
-			$this->child_theme_style
-			                   = file_exists( "$this->child_theme_dir/assets/theme.css" )
-				? "$this->child_theme_uri/assets/theme.css"
-				: "$this->child_theme_uri/style.css";
-			$this->child_theme_script
-			                   = file_exists( "$this->child_theme_dir/assets/theme.min.js" )
-				? "$this->child_theme_uri/assets/theme.min.js"
-				: ( file_exists( "$this->child_theme_dir/assets/theme.js" )
-					? "$this->child_theme_uri/assets/theme.js" : null );
-			$this->child_theme_textdomain
-			                   = $this->child_theme->get( 'TextDomain' );
-		}
 
 		add_action( 'after_setup_theme', [ $this, 'setup' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_assets' ] );
@@ -66,10 +52,24 @@ new class {
 
 	public function setup() {
 
+		$this->theme            = wp_get_theme( $this->ns );
+		$this->theme_style      = "$this->theme_uri/assets/theme.css";
+		$this->theme_script     = "$this->theme_uri/assets/theme.min.js";
+		$this->theme_textdomain = $this->theme->get( 'TextDomain' );
+		$this->theme_domainpath = $this->theme_dir . $this->theme->get( 'DomainPath' );
+
+		if ( $this->child_theme_dir != $this->theme_dir ) {
+			$this->child_theme            = wp_get_theme();
+			$this->child_theme_style      = file_exists( "$this->child_theme_dir/assets/theme.css" ) ? "$this->child_theme_uri/assets/theme.css" : "$this->child_theme_uri/style.css";
+			$this->child_theme_script     = file_exists( "$this->child_theme_dir/assets/theme.min.js" ) ? "$this->child_theme_uri/assets/theme.min.js" : ( file_exists( "$this->child_theme_dir/assets/theme.js" ) ? "$this->child_theme_uri/assets/theme.js" : null );
+			$this->child_theme_textdomain = $this->child_theme->get( 'TextDomain' );
+			$this->child_theme_domainpath = $this->child_theme_dir . $this->child_theme->get( 'DomainPath' );
+		}
+
 		// Support translation.
-		load_theme_textdomain( $this->theme_textdomain );
+		load_theme_textdomain( $this->theme_textdomain, $this->theme_domainpath );
 		if ( $this->child_theme_textdomain ) {
-			load_theme_textdomain( $this->child_theme_textdomain );
+			load_theme_textdomain( $this->child_theme_textdomain, $this->child_theme_domainpath );
 		}
 
 		// Enqueue editor styles.
@@ -86,22 +86,15 @@ new class {
 
 	public function enqueue_assets() {
 
-		wp_enqueue_style( $this->ns, $this->theme_style, [],
-			$this->theme->version );
+		wp_enqueue_style( $this->ns, $this->theme_style, [], $this->theme->version );
 		if ( $this->child_theme_style ) {
-			wp_enqueue_style( $this->child_theme->stylesheet,
-				$this->child_theme_style, [ $this->ns ],
-				$this->child_theme->version );
+			wp_enqueue_style( $this->child_theme->stylesheet, $this->child_theme_style, [ $this->ns ], $this->child_theme->version );
 		}
 
-		wp_enqueue_script( $this->ns, $this->theme_script, [],
-			$this->theme->version,
-			[ 'strategy' => 'async', 'in_footer' => true ] );
+		wp_enqueue_script( $this->ns, $this->theme_script, [], $this->theme->version, [ 'strategy' => 'async', 'in_footer' => true ] );
 		if ( $this->child_theme_script ) {
-			$args = apply_filters( 'kntnt_canvas_child_script_args',
-				[ 'strategy' => 'async', 'in_footer' => true ] );
-			wp_enqueue_script( $this->child_theme->stylesheet,
-				$this->child_theme_script, [ $this->ns ], $args );
+			$args = apply_filters( 'kntnt_canvas_child_script_args', [ 'strategy' => 'async', 'in_footer' => true ] );
+			wp_enqueue_script( $this->child_theme->stylesheet, $this->child_theme_script, [ $this->ns ], $args );
 		}
 
 	}
@@ -161,23 +154,19 @@ new class {
 		$pattern_categories = [
 			'hero'          => [
 				'label'       => __( 'Hero sections', 'kntnt-canvas' ),
-				'description' => __( 'Introductory section at top of page.',
-					'kntnt-canvas' ),
+				'description' => __( 'Introductory section at top of page.', 'kntnt-canvas' ),
 			],
 			'heading'       => [
 				'label'       => __( 'Heading sections', 'kntnt-canvas' ),
-				'description' => __( 'Introductory section at top of posts.',
-					'kntnt-canvas' ),
+				'description' => __( 'Introductory section at top of posts.', 'kntnt-canvas' ),
 			],
 			'heading_parts' => [
 				'label'       => __( 'Heading parts', 'kntnt-canvas' ),
-				'description' => __( 'Patterns used to build headings.',
-					'kntnt-canvas' ),
+				'description' => __( 'Patterns used to build headings.', 'kntnt-canvas' ),
 			],
-			'theme'       => [
+			'theme'         => [
 				'label'       => __( 'Theme patters', 'kntnt-canvas' ),
-				'description' => __( 'Patters used by the theme.',
-					'kntnt-canvas' ),
+				'description' => __( 'Patters used by the theme.', 'kntnt-canvas' ),
 			],
 		];
 
