@@ -3,7 +3,7 @@
  * Title: Footer
  * Slug: kntnt-canvas/footer
  * Description: Footer with logo, social icons, navigation, and text areas.
- * Categories: footer
+ * Categories: theme
  * Keywords: footer
  * Viewport Width: 1280
  * Block Types:

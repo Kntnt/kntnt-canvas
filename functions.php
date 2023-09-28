@@ -42,10 +42,18 @@ new class {
 		$this->theme_textdomain = $this->theme->get( 'TextDomain' );
 
 		if ( $this->child_theme_dir != $this->theme_dir ) {
-			$this->child_theme            = wp_get_theme();
-			$this->child_theme_style      = file_exists( "$this->child_theme_dir/assets/theme.css" ) ? "$this->child_theme_uri/assets/theme.css" : "$this->child_theme_uri/style.css";
-			$this->child_theme_script     = file_exists( "$this->child_theme_dir/assets/theme.min.js" ) ? "$this->child_theme_uri/assets/theme.min.js" : ( file_exists( "$this->child_theme_dir/assets/theme.js" ) ? "$this->child_theme_uri/assets/theme.js" : null );
-			$this->child_theme_textdomain = $this->child_theme->get( 'TextDomain' );
+			$this->child_theme = wp_get_theme();
+			$this->child_theme_style
+			                   = file_exists( "$this->child_theme_dir/assets/theme.css" )
+				? "$this->child_theme_uri/assets/theme.css"
+				: "$this->child_theme_uri/style.css";
+			$this->child_theme_script
+			                   = file_exists( "$this->child_theme_dir/assets/theme.min.js" )
+				? "$this->child_theme_uri/assets/theme.min.js"
+				: ( file_exists( "$this->child_theme_dir/assets/theme.js" )
+					? "$this->child_theme_uri/assets/theme.js" : null );
+			$this->child_theme_textdomain
+			                   = $this->child_theme->get( 'TextDomain' );
 		}
 
 		add_action( 'after_setup_theme', [ $this, 'setup' ] );
@@ -78,15 +86,22 @@ new class {
 
 	public function enqueue_assets() {
 
-		wp_enqueue_style( $this->ns, $this->theme_style, [], $this->theme->version );
+		wp_enqueue_style( $this->ns, $this->theme_style, [],
+			$this->theme->version );
 		if ( $this->child_theme_style ) {
-			wp_enqueue_style( $this->child_theme->stylesheet, $this->child_theme_style, [ $this->ns ], $this->child_theme->version );
+			wp_enqueue_style( $this->child_theme->stylesheet,
+				$this->child_theme_style, [ $this->ns ],
+				$this->child_theme->version );
 		}
 
-		wp_enqueue_script( $this->ns, $this->theme_script, [], $this->theme->version, [ 'strategy' => 'async', 'in_footer' => true ] );
+		wp_enqueue_script( $this->ns, $this->theme_script, [],
+			$this->theme->version,
+			[ 'strategy' => 'async', 'in_footer' => true ] );
 		if ( $this->child_theme_script ) {
-			$args = apply_filters( 'kntnt_canvas_child_script_args', [ 'strategy' => 'async', 'in_footer' => true ] );
-			wp_enqueue_script( $this->child_theme->stylesheet, $this->child_theme_script, [ $this->ns ], $args );
+			$args = apply_filters( 'kntnt_canvas_child_script_args',
+				[ 'strategy' => 'async', 'in_footer' => true ] );
+			wp_enqueue_script( $this->child_theme->stylesheet,
+				$this->child_theme_script, [ $this->ns ], $args );
 		}
 
 	}
@@ -116,21 +131,21 @@ new class {
 			'core/separator' => [
 				[
 					'name'  => 'wide-dotted',
-					'label' => 'Wide Dotted'
+					'label' => 'Wide Dotted',
 				],
 				[
 					'name'  => 'wide-dashed',
-					'label' => 'Wide Dashed'
+					'label' => 'Wide Dashed',
 				],
 				[
 					'name'  => 'wide-double',
-					'label' => 'Wide Double'
+					'label' => 'Wide Double',
 				],
 				[
 					'name'  => 'hidden',
-					'label' => 'Hidden'
+					'label' => 'Hidden',
 				],
-			]
+			],
 		];
 
 		foreach ( $block_styles as $name => $styles ) {
@@ -146,16 +161,24 @@ new class {
 		$pattern_categories = [
 			'hero'          => [
 				'label'       => __( 'Hero sections', 'kntnt-canvas' ),
-				'description' => __( 'Introductory section at top of page.', 'kntnt-canvas' ),
+				'description' => __( 'Introductory section at top of page.',
+					'kntnt-canvas' ),
 			],
 			'heading'       => [
 				'label'       => __( 'Heading sections', 'kntnt-canvas' ),
-				'description' => __( 'Introductory section at top of posts.', 'kntnt-canvas' ),
+				'description' => __( 'Introductory section at top of posts.',
+					'kntnt-canvas' ),
 			],
 			'heading_parts' => [
 				'label'       => __( 'Heading parts', 'kntnt-canvas' ),
-				'description' => __( 'Patterns used to build headings.', 'kntnt-canvas' ),
-			]
+				'description' => __( 'Patterns used to build headings.',
+					'kntnt-canvas' ),
+			],
+			'theme'       => [
+				'label'       => __( 'Theme patters', 'kntnt-canvas' ),
+				'description' => __( 'Patters used by the theme.',
+					'kntnt-canvas' ),
+			],
 		];
 
 		foreach ( $pattern_categories as $slug => $category ) {

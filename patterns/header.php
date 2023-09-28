@@ -3,7 +3,7 @@
  * Title: Header
  * Slug: kntnt-canvas/header
  * Description: Header with logo, site name, call to action button, and hamburger menu with navigation and search.
- * Categories: header
+ * Categories: theme
  * Keywords: 
  * Viewport Width: 1280
  * Block Types: 
