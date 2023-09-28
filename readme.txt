@@ -21,6 +21,8 @@ Kntnt Canvas is developed to accomplish three objectives:
 == Changelog ==
 
 = 1.0.2 =
+* NEW: Added a pattern category for patterns used by the theme.
+* FIXED: Made 404 and index templates translatable.
 * FIXED: HTML-escaped translation strings in header and footer.
 
 = 1.0.1 =

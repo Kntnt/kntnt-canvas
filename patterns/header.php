@@ -4,7 +4,7 @@
  * Slug: kntnt-canvas/header
  * Description: Header with logo, site name, call to action button, and hamburger menu with navigation and search.
  * Categories: theme
- * Keywords: 
+ * Keywords: header
  * Viewport Width: 1280
  * Block Types: 
  * Post Types: wp_template, wp_template_part

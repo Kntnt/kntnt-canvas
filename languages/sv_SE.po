@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Kntnt Canvas\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-06 20:47+0000\n"
-"PO-Revision-Date: 2023-09-06 20:51+0000\n"
+"PO-Revision-Date: 2023-09-28 09:21+0000\n"
 "Last-Translator: Thomas Barregren\n"
 "Language-Team: Svenska\n"
 "Language: sv_SE\n"
@@ -15,16 +15,6 @@ msgstr ""
 "X-Loco-Version: 2.6.6; wp-6.3.1\n"
 "X-Domain: kntnt-canvas"
 
-#. %s: Name of the theme
-#: patterns/footer.php:42
-#, php-format
-msgid ""
-"%s is a block theme that is designed to provide a foundation on which custom "
-"themes can be created as a child themes."
-msgstr ""
-"%s är ett blocktema som är utformat för att utgöra en grund på vilken "
-"anpassade teman kan skapas som barnteman."
-
 #. Description of the theme
 msgid ""
 "A block theme that is designed to provide a foundation on which custom "
@@ -33,36 +23,56 @@ msgstr ""
 "Ett blocktema som är utformat för att utgöra en grund på vilken anpassade "
 "teman kan skapas som barnteman."
 
+#: patterns/index.php:21
+msgid ""
+"A technical error prevents the page from being displayed (a template is "
+"missing). Please let us know so we can fix it. We appreciate your help."
+msgstr ""
+"Ett tekniskt fel gör att sidan inte kan visas (en mall saknas). Vänligen "
+"meddela oss så att vi kan åtgärda det. Vi uppskattar din hjälp."
+
 #: patterns/header.php:25
 msgid "Contact Us"
 msgstr "Kontakta oss"
 
-#: functions.php:109
+#: functions.php:173
 msgid "Heading parts"
 msgstr "Rubrikdelar"
 
-#: functions.php:105
+#: functions.php:168
 msgid "Heading sections"
 msgstr "Rubriksektioner"
 
-#: functions.php:101
+#: functions.php:163
 msgid "Hero sections"
 msgstr "Hjältesektioner"
 
-#: functions.php:102
+#: functions.php:164
 msgid "Introductory section at top of page."
 msgstr "Inledande avsnitt överst på sidan."
 
-#: functions.php:106
+#: functions.php:169
 msgid "Introductory section at top of posts."
 msgstr "Inledande avsnitt längst upp i inläggen."
 
-#: functions.php:110
+#: patterns/404.php:16 patterns/index.php:16
+msgid "Oops!"
+msgstr "Hoppsan!"
+
+#: functions.php:174
 msgid "Patterns used to build headings."
 msgstr "Patterns used to build headings."
 
-#. %s: Name of the theme
-#: patterns/footer.php:58
-#, php-format
-msgid "Theme based on %s"
-msgstr "Theme based on %s"
+#: functions.php:179
+msgid "Patters used by the theme."
+msgstr "Mönster som används av temat."
+
+#: patterns/404.php:21
+msgid ""
+"The page does not exist. Check the address, or try searching the website:"
+msgstr ""
+"Sidan finns inte. Kontrollera adressen, eller försök söka på webbplatsen:"
+
+#: functions.php:178
+msgid "Theme patters"
+msgstr "Tema mönster"
