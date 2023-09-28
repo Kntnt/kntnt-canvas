@@ -22,7 +22,7 @@
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
 <div class="wp-block-group"><!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"style":{"spacing":{"padding":{"left":"var:preset|spacing|15","right":"var:preset|spacing|15","top":"var:preset|spacing|5","bottom":"var:preset|spacing|5"}}},"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" style="padding-top:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--15);padding-bottom:var(--wp--preset--spacing--5);padding-left:var(--wp--preset--spacing--15)"><?php _e( 'Contact Us', 'kntnt-canvas'); ?></a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" style="padding-top:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--15);padding-bottom:var(--wp--preset--spacing--5);padding-left:var(--wp--preset--spacing--15)"><?php esc_html_e( 'Contact Us', 'kntnt-canvas'); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 

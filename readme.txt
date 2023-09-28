@@ -20,6 +20,9 @@ Kntnt Canvas is developed to accomplish three objectives:
 
 == Changelog ==
 
+= 1.0.2 =
+* FIXED: HTML-escaped translation strings in header and footer.
+
 = 1.0.1 =
 * FIXED: Undefined property: class@anonymous::$child_theme_textdomain.
 

@@ -39,7 +39,7 @@
         <div class="wp-block-group"><!-- wp:paragraph -->
             <p><?php printf(
 				/* translators: %s: Name of the theme */
-					__( '%s is a block theme that is designed to provide a foundation on which custom themes can be created as a child themes.', 'kntnt-canvas' ),
+		            esc_html( '%s is a block theme that is designed to provide a foundation on which custom themes can be created as a child themes.', 'kntnt-canvas' ),
 					'Kntnt Canvas'
 				); ?></p>
             <!-- /wp:paragraph --></div>
@@ -55,7 +55,7 @@
         <div class="wp-block-group"><!-- wp:paragraph {"style":{"layout":{"selfStretch":"fit","flexSize":null}}} -->
             <p><a href="https://github.com/Kntnt/kntnt-canvas"><?php printf(
 					/* translators: %s: Name of the theme */
-						__( 'Theme based on %s', 'kntnt-canvas' ),
+			            esc_html( 'Theme based on %s', 'kntnt-canvas' ),
 						'Kntnt Canvas'
 					); ?></a></p>
             <!-- /wp:paragraph --></div>
